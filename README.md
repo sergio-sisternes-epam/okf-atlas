@@ -4,7 +4,7 @@ Dedicated Atlas store for the okf skill. This is a **store package**, not a skil
 
 OKF root is `atlas/` (`atlas/SCHEMA.json`), not the git root. Git root holds only package metadata (`README.md`, `apm.yml`, `.gitignore`, optional `LICENSE`).
 
-Consumers mount this repo, then pass `--root` at the nested `atlas/` directory:
+Consumers mount this repo, then point `--root` at the nested `atlas/` directory:
 
 ```text
 atlas auth login --host github.com
