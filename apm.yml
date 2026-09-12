@@ -1,9 +1,0 @@
-name: okf-atlas
-version: 0.1.0
-description: Dedicated Atlas store package for the okf skill (not a skill). OKF root is the git root. Mount this repo and point --root at the clone root.
-author: Sergio Sisternes
-license: Apache-2.0
-dependencies:
-  apm:
-    - sergio-sisternes-epam/okf
-    - sergio-sisternes-epam/atlas
