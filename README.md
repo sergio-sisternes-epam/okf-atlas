@@ -1,20 +1,36 @@
 # okf-atlas
 
-Dedicated Atlas store for the okf skill. This is a **store package**, not a skill — there is no `SKILL.md`.
+Plain Atlas store for OKF process memory.
 
-OKF root is the **git root** (`SCHEMA.json` next to this README), not a nested `atlas/` folder. Git root also holds package metadata (`README.md`, `apm.yml`, `.gitignore`, optional `LICENSE`).
+The Atlas store root is the **git root**, where `SCHEMA.json` and `index.md`
+live. It is not a nested `atlas/` directory.
 
-Consumers mount this repo, then point `--root` at the **clone root** (not `…/atlas`):
+## Mount
+
+Mount this repository with Atlas, then use the resolved clone root for compile
+and search operations:
 
 ```text
 atlas auth login --host github.com
 atlas mount github.com/sergio-sisternes-epam/okf-atlas --ref main
+atlas resolve github.com/sergio-sisternes-epam/okf-atlas
 atlas compile --root .atlas/github.com/sergio-sisternes-epam/okf-atlas
 atlas search "…" --root .atlas/github.com/sergio-sisternes-epam/okf-atlas
 ```
 
-Default clone path: `.atlas/github.com/sergio-sisternes-epam/okf-atlas`
+The default mount, compile, and search root is
+`.atlas/github.com/sergio-sisternes-epam/okf-atlas`.
 
-Compile/query root: `.atlas/github.com/sergio-sisternes-epam/okf-atlas` (the clone root)
+From this repository, compile the store directly at the git root:
 
-APM dependencies: `sergio-sisternes-epam/okf`, `sergio-sisternes-epam/atlas`.
+```text
+atlas compile --root .
+atlas search "…" --root .
+```
+
+## ALL RIGHTS RESERVED
+
+Copyright (c) 2026 Sergio Sisternes. All rights reserved.
+
+See [LICENSE](LICENSE). Public visibility does not grant permission to use,
+copy, modify, or distribute this repository.
